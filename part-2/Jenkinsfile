@@ -6,9 +6,9 @@ node {
     }
 
     stage("Build project"){
-        sh "cd part-2/src"
-        sh "cmake CMakeLists.txt"
-        sh "make"
+        sh "cd part-2/src && \
+        cmake CMakeLists.txt && \
+        make"
     }
 
     stage("Test project"){
