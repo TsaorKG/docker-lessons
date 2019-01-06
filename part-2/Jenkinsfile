@@ -1,0 +1,17 @@
+def repo_url = 'https://github.com/GabrielWal/docker-lessons.git'
+def repo_branch = 'master'
+node {
+    stage("Get project"){
+        git branch: repo_branch, url: repo_url
+    }
+
+    stage("Build project"){
+        sh "cd part-2/src"
+        sh "cmake CMakeLists.txt"
+        sh "make"
+    }
+
+    stage("Test project"){
+        sh "cmake ../ && cmake --build ."
+    }
+}
