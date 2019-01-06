@@ -13,10 +13,4 @@ RUN cd /usr/src/gtest && \
     make && \
     cp *.a /usr/lib
 
-RUN mkdir -p /var/jenkins_home/googleTest
-
-COPY src/ /var/jenkins_home/googleTest/
-
-RUN chown -R jenkins:jenkins /var/jenkins_home/googleTest/
-
 USER jenkins
