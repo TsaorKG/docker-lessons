@@ -12,6 +12,6 @@ node {
     }
 
     stage("Test project"){
-        sh "cmake ../ && cmake --build ."
+        sh "cd part-2/src && ./runTests"
     }
 }
